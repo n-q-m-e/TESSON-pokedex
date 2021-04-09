@@ -10,12 +10,13 @@
                 <mat-list>
                     <mat-list-item>
                         <p>{{pokemon.name}}</p>
-                        <audio id="audio">
+
+                        <audio #cry>
                             <source src="assets/audio/{{pokemon.id}}.mp3">
                         </audio>
-                        <a href="#" onClick="document.getElementById('audio').play(); return false;">
-                            <mat-icon id="audio">play_circle_outline</mat-icon>
-                        </a>
+
+                        <mat-icon (click)="cry.play()" id="audio">play_circle_outline</mat-icon>
+
                     </mat-list-item>
                     <mat-list-item>
                         <mat-chip-list>
@@ -37,5 +38,4 @@
             {{pokemon.description}}
         </div>
     </mat-card>
-    <button class="clear" (click)="goBack()">Retour</button>
 </ng-container>

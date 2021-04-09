@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Pokemon } from 'src/app/models/pokemon.model';
 import { PokemonService } from '../../services/pokemon.service'
 import { MatListModule } from '@angular/material/list';
@@ -12,6 +12,7 @@ export class PokemonListComponent implements OnInit {
 
   pokemons: Pokemon[] = [];
   offset: number = 0;
+  @Output() id = new EventEmitter<number>();
 
   constructor(private pokemonService: PokemonService) { }
 
@@ -26,6 +27,10 @@ export class PokemonListComponent implements OnInit {
 
   getPokemons(): void {
     this.pokemonService.getPokemons(this.offset).subscribe(result => this.pokemons = this.pokemons.concat(result.data));
+  }
+
+  sendId(value: number): void {
+    this.id.emit(value);
   }
 
 }
