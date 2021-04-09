@@ -1,6 +1,5 @@
-<h2>Mes pokémons !</h2>
 <ng-container>
-  <mat-nav-list infiniteScroll (scrolled)="onScroll()">
+  <mat-nav-list class="pokemon-list" infiniteScroll [scrollWindow]="false" (scrolled)="onScroll()">
     <mat-list-item *ngFor="let pokemon of pokemons">
       <img matListAvatar src="assets/img/sprites/{{pokemon.id}}.png">
       <a routerLink="/detail/{{pokemon.id}}">
