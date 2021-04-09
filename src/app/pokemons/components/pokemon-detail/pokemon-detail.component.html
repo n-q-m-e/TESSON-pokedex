@@ -9,7 +9,7 @@
                 <mat-list>
                     <mat-list-item>
                         <p>{{pokemon.name}}</p>
-                        <audio id="audio">
+                        <audio autoplay id="audio">
                             <source src="assets/audio/{{pokemon.id}}.mp3">
                         </audio>
                         <a href="#" onClick="document.getElementById('audio').play(); return false;">
