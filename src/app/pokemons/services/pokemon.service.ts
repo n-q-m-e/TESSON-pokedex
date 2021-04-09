@@ -20,7 +20,7 @@ export class PokemonService {
       );
 
   }
-//salut
+  
   getPokemon(id: number): Observable<Pokemon | undefined> {
 
     const url = `${this.urlPokemons}/pokemons/${id}`;
