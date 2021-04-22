@@ -35,7 +35,6 @@ export class ConnexionService {
         this.accessT = response.access_token;
       }
     }));
-
   }
 
   register(email?: string, password?: string): Observable<Login> {

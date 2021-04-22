@@ -18,7 +18,7 @@ export class TeamComponent implements OnInit {
   constructor(private connexionService: ConnexionService, private pokemonService: PokemonService) { }
 
   ngOnInit(): void {
-    this.connexionService.login();
+    this.connexionService.login().subscribe(result => { console.log(result.access_token) });
     this.getTeam();
   }
 
